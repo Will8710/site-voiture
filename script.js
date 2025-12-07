@@ -167,7 +167,7 @@ document.querySelectorAll(".nav-menu .nav-link").forEach(link => {
 
         // Titre H3
         const h3 = document.createElement('h3');
-        h3.textContent = 'Contactez‑vous';
+        h3.textContent = 'Contactez‑nous';
         h3.style.textAlign = 'center';
         h3.style.marginBottom = '20px';
         contactSection.appendChild(h3);
