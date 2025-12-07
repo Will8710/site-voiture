@@ -152,7 +152,7 @@ document.querySelectorAll(".nav-menu .nav-link").forEach(link => {
     // BOUTON WHATSAPP FLOTTANT
     // ----------------------------
     const whatsappBtn = document.createElement('a');
-    whatsappBtn.href = 'https://wa.me/225779283551'; // Remplace par ton numéro
+    whatsappBtn.href = 'https://wa.me/message/UGQEKFGMPS6BL1'; 
     whatsappBtn.target = '_blank';
     whatsappBtn.className = 'btn-whatsapp';
     whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
