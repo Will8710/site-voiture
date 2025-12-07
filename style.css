@@ -43,7 +43,6 @@ img {
   max-width: var(--max-width);
   margin: auto;
 }
-
 /* -------------------------------------- */
 /*                HEADER                  */
 /* -------------------------------------- */
@@ -56,51 +55,79 @@ img {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
   padding: 10px 20px;
-  flex-wrap: wrap;
 }
 
-/* Alignements */
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header.sticky {
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
-    padding: 10px 0; 
-    transition: 0.3s ease;
+/* -------------------------------------- */
+/*               LOGO                     */
+/* -------------------------------------- */
+.logo {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.logo-color {
+  color: var(--blue);
 }
 
 /* -------------------------------------- */
-/*  Burger menu - caché sur desktop       */
+/*           NAVIGATION DESKTOP           */
 /* -------------------------------------- */
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
 
+.nav-link {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--blue-light);
+}
+
+/* -------------------------------------- */
+/*           BURGER BUTTON                */
+/* -------------------------------------- */
 .burger {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 25px;
-  height: 18px;
+  width: 28px;
+  height: 20px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  z-index: 2000;
 }
 
 .burger span {
-  display: block;
   height: 3px;
   width: 100%;
-  background: var(--text);
-  border-radius: 2px;
-  transition: all 0.3s;
+  background: white;
+  border-radius: 4px;
+  transition: 0.3s;
 }
 
-
+/* Animation */
 .burger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translateY(7px);
 }
 
 .burger.active span:nth-child(2) {
@@ -108,109 +135,37 @@ header.sticky {
 }
 
 .burger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translateY(-7px);
 }
 
 /* -------------------------------------- */
-/*               RESPONSIVE               */
+/*           MENU MOBILE                  */
 /* -------------------------------------- */
-
-/* Menu mobile */
 @media (max-width: 768px) {
+
   .burger {
     display: flex;
+    z-index: 2000;
   }
 
   .nav-menu {
-    position: absolute;
-    top: 100%;          /* juste en dessous du header */
-    left: 0;
-    width: 100%;
-    background: var(--bg-alt);
+    position: fixed;
+    top: 0;
+    right: -90%;
+    width: 70%;
+    height: 100%;
+    background: rgba(0,0,0,0.92);
+    backdrop-filter: blur(10px);
     flex-direction: column;
-    gap: 0;
-    overflow: hidden;
-    max-height: 0;      /* caché par défaut */
-    transition: max-height 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1500;
   }
 
   .nav-menu.open {
-    max-height: 500px;  /* ajuster selon nombre de liens */
-  }
-
-  .nav-link {
-    padding: 12px 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-}
-
-/* ---------------------------- */
-/*            LOGO              */
-/* ---------------------------- */
-
-/* LOGO DANS HEADER */
-
-#main-header .logo {
-  text-decoration: none;       /* Supprime le soulignement */
-  display: inline-flex;
-  align-items: center;         /* Même alignement que les liens du menu */
-  
-}
-
-#main-header .logo-text {
-  font-size: clamp (1.2rem, 5vw, 2rem);
-  font-weight: 800;
-  color: #ffffff;              /* Prime et Service en blanc */
-  display: flex;
-  align-items: center;
-  min-width: 0;
-  flex: 1 1 auto;
-  
-}
-
-#main-header .logo-text .logo-color {
-  color: var(--blue);          /* Auto en bleu premium */
-  margin: 0 4px;               /* Espacement entre Prime et Service */
-}
-
-/* ---------------------------- */
-/*            MENU              */
-/* ---------------------------- */
-
-.nav-menu {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  align-items: center;
-  flex: 0 0 auto;
-}
-
-.nav-link {
-  color: var(--text);
-  font-weight: 500;
-  text-decoration: none;            /* Désoulignage */
-  transition: var(--transition);
-}
-
-.nav-link:hover {
-  color: var(--blue-light);
-
-}
-
-/* ---------------------------
-   RESPONSIVE
-----------------------------*/
-@media (max-width: 768px) {
-  #main-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
+    right: 0;
   }
 }
 
@@ -279,6 +234,7 @@ header.sticky {
 @media (max-width: 768px) {
   .hero-section {
     height: 60vh;
+    background-size: contain; /* l'image entière visible sur mobile */
   }
 
   .hero-content h1 {
