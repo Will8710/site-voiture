@@ -15,22 +15,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // ----------------------------
     // MENU BURGER MOBILE
     // ----------------------------
-    const burger = document.getElementById("burger-menu");
-    const navMenu = document.querySelector(".nav-menu");
+ const burger = document.querySelector(".burger");
+const navMenu = document.querySelector(".nav-menu");
 
-    burger.addEventListener("click", () => {
-        navMenu.classList.toggle("open");
-        burger.classList.toggle("active");
-    });
+burger.addEventListener("click", () => {
+    navMenu.classList.toggle("open"); // menu glisse
+    burger.classList.toggle("active"); // animation burger
+});
 
-    document.querySelectorAll(".nav-menu .nav-link").forEach(link => {
-        link.addEventListener("click", () => {
-            if (navMenu.classList.contains("open")) {
-                navMenu.classList.remove("open");
-                burger.classList.remove("active");
-            }
-        });
+document.querySelectorAll(".nav-menu .nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+        burger.classList.remove("active");
     });
+});
+
 
     // ----------------------------
     // BADGE COLOR
@@ -153,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // BOUTON WHATSAPP FLOTTANT
     // ----------------------------
     const whatsappBtn = document.createElement('a');
-    whatsappBtn.href = 'https://wa.me/225123456789'; // Remplace par ton numéro
+    whatsappBtn.href = 'https://wa.me/225779283551'; // Remplace par ton numéro
     whatsappBtn.target = '_blank';
     whatsappBtn.className = 'btn-whatsapp';
     whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
