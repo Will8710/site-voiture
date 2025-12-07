@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voitures Premium - Import & Occasion | Côte d'Ivoire</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-pap5c..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://unpkg.com/lucide@latest" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Scripts -->
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body data-page="home">
+
+<header id="main-header">
+    <div class="container header-content">
+        <a href="#" class="logo">
+            <span class="logo-text">Prime<span class="logo-color">Auto</span>Service</span>
+        </a>
+       
+        <!-- Burger menu -->
+    <button id="burger-menu" class="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+        <nav class="nav-menu">
+            <a href="#hero-section" class="nav-link">Accueil</a>
+            <a href="#catalogue-section" class="nav-link">Catalogue</a>
+            <a href="#services-section" class="nav-link">Services</a>
+            <a href="#about-section" class="nav-link">À Propos</a>
+            <a href="#contact-section" class="nav-link btn-contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main id="main-content">
+
+    <!-- HOME VIEW -->
+    <div id="home-view" class="view active">
+
+        <!-- Hero Section -->
+        <section id="hero-section" class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1 class="scroll-anim fade-in-up">Votre prochain rêve automobile commence ici.</h1>
+                <p class="scroll-anim fade-in-up delay-2">
+                    Importation premium de véhicules neufs et d'occasion certifiés de Corée du Sud vers la Côte d'Ivoire.
+                </p>
+                <p class="scroll-anim fade-in-up delay-2">
+                    <span class="highlight-badge">Disponible 24h/7</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section id="search-section" class="search-section">
+            <div class="container">
+                <form id="search-form" class="search-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="search-marque">Marque</label>
+                            <select id="search-marque" name="marque" class="filter-input">
+                                <option value="">Toutes</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="search-modele">Modèle</label>
+                            <select id="search-modele" name="modele" class="filter-input" disabled>
+                                <option value="">Tous</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="search-km">Kilométrage (Max)</label>
+                            <input id="search-km" type="number" class="filter-input" placeholder="Max km">
+                        </div>
+                        <div class="input-group">
+                            <label for="search-price">Prix (Max CFA)</label>
+                            <input id="search-price" type="number" class="filter-input" placeholder="Max prix">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-search">
+                        <svg width="18" height="18" fill="none" stroke="white" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="8" cy="8" r="6"></circle>
+                            <line x1="12" y1="12" x2="16" y2="16"></line>
+                        </svg>
+                        RECHERCHER
+                    </button>
+                </form>
+              </div>
+          </section>
+
+                <!-- Catalogue Container -->
+          <section id="catalogue-section" class="catalogue-section">
+              <div class="container">
+              <h2 class="section-title scroll-anim fade-in">Notre Catalogue</h2>
+                <div id="catalogue-container" class="catalogue-grid scroll-anim fade-in-up"></div>
+                   <p id="no-results" class="no-results" style="display: none;">Aucun résultat trouvé.</p>
+              </div>
+          </section>
+
+        <!-- Services Section -->
+        <section id="services-section" class="services-section section-padding">
+            <div class="container">
+                <h2 class="section-title scroll-anim fade-in">Nos Services Premium</h2>
+
+                <div class="services-grid">
+
+                    <!-- Importation -->
+                    <div class="service-card scroll-anim fade-in-up delay-1">
+                        <div class="service-header">
+                            <div class="service-icon"><i data-lucide="plane"></i></div>
+                            <h3>Importation Personnalisée</h3>
+                        </div>
+                        <p>Nous gérons l'importation de véhicules neufs et d'occasion directement de Corée du Sud, sur commande et selon vos spécialités.</p>
+                    </div>
+
+                    <!-- Vente Occasion -->
+                    <div class="service-card scroll-anim fade-in-up delay-2">
+                        <div class="service-header">
+                            <div class="service-icon"><i data-lucide="shield-check"></i></div>
+                            <h3>Vente Occasion Certifiée</h3>
+                        </div>
+                        <p>Des véhicules d'occasion avec un historique clair et un contôle technique rigoureux pour une tranquilité d'esprit maximale.</p>
+                    </div>
+
+                    <!-- Neufs -->
+                    <div class="service-card scroll-anim fade-in-up delay-3">
+                        <div class="service-header">
+                            <div class="service-icon"><i data-lucide="gauge"></i></div>
+                            <h3>Véhicules Neufs</h3>
+                        </div>
+                        <p>Accès à une sélection de véhicules neufs de marques coréennenes et internationnales les plus prestigieuses.</p>
+                    </div>
+
+                    <!-- Dépôt-Vente -->
+                    <div class="service-card scroll-anim fade-in-up delay-4">
+                        <div class="service-header">
+                            <div class="service-icon"><i data-lucide="key-round"></i></div>
+                            <h3>Dépôt-Vente Rapide</h3>
+                        </div>
+                        <p>Confiez votre véhicule à Prime Auto Service pour un dépot-vente sans stress !</p> <br>
+                    
+                        <ul>
+                            <li><i data-lucide="check-circle"></i> Estimation gratuite</li>
+                            <li><i data-lucide="check-circle"></i> Photos professionnelles</li>
+                            <li><i data-lucide="check-circle"></i> Mise en vente immédiate</li>
+                            <li><i data-lucide="check-circle"></i> Paiement sécurisé</li>
+                        <ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about-section" class="about-section section-padding">
+            <div class="container about-content-grid">
+                <div class="about-text scroll-anim fade-in-left">
+                    <h2 class="section-title">Qui sommes-nous ?</h2>
+                    <h2>Notre Engagement : Qualité & Transparence</h2></br>
+                    <p>Forts d'une expertise unique dans l'importation automobile Corée - Côte d'Ivoire, nous nous engageons à vous offrir des véhicules de qualité premium et une transparence totale sur leur origine et leur état.</p>
+<p>Chez Prime Auto Service, chaque véhicule est slectionnée avec soin pour garantir votre entière satisfaction. Nous sommes votre partenaire de confiance pour un achat automobile serien.</p>
+                   <a href="#contact-section" class="btn-cta secondary-cta">
+                        <i data-lucide="users"></i> Contactez notre équipe
+                    </a>
+                </div>
+                <div class="about-image scroll-anim fade-in-right">
+                    <img src="about-car.PNG" alt="Notre engagement" class="about-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+    <section class="contact-section">
+  <!-- le formulaire sera injecté ici par JS -->
+</section>
+
+
+    </div> <!-- end home-view -->
+ 
+
+        <!-- DETAIL VIEW -->
+<section id="detail-view" class="view detail-view" style="display:none;">
+  <div class="detail-wrapper">
+
+    <!-- CAROUSEL DES IMAGES -->
+    <div class="detail-left">
+      <div class="main-image">
+        <img id="main-detail-img" src="" alt="Voiture en détail">
+        <span id="detail-badge" class="badge"></span>
+      </div>
+
+      <!-- Carousel horizontal -->
+      <div id="thumbs-container" class="thumbs">
+        <!-- Les vignettes seront injectées par JS -->
+      </div>
+    </div>
+
+    <!-- DETAILS -->
+    <div class="detail-right">
+      <h2 id="detail-title"></h2>
+      <p id="detail-type" class="detail-type"></p>
+      <p id="detail-price" class="price"></p>
+
+      <div id="car-detail-container" class="card-details"></div>
+      <p id="detail-description" class="detail-description"></p>
+
+      <button id="back-to-catalogue" class="btn-cta secondary-cta back-btn">
+        <i data-lucide="chevron-left"></i> Retour au Catalogue
+      </button>
+    </div>
+
+  </div>
+</section>
+
+</section>
+
+</main>
+
+<footer id="main-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <strong class="text-blue">PrimeAutoService</strong>
+                <p>Votre partenaire d'importation de véhicules premium.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Liens Rapides</h4>
+                    <p><a href="#catalogue-section">Catalogue</a></p>
+                    <p><a href="#services-section">Nos Services</a></p>
+                    <p><a href="#about-section">À Propos</a></p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contactez-nous</h4>
+                  <p>cheickstephanes@gmail.com</p>
+                  <p>+225 07 79 28 35 51</p>
+                  <p>Angré château, Rue 2,36</p>
+                  <p>Abidjan - Côte d'Ivoire</p>
+            </div>
+            <div class="footer-social">
+                <h4>Suivez-nous</h4>
+                <div class="social-icons">
+                    <a href="https://facebook.com"><i data-lucide="facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+        <hr>
+            <p>&copy; 2024 Prime Auto Service</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
